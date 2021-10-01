@@ -5,8 +5,7 @@ class TestHandlerCase(unittest.TestCase):
 
     def test_response(self):
 
-        event = {'topicId': 1}
-
+        event = {'pathParameters': {'topicID': 1}}
         print("testing response.")
         result = index.handler(event, None)
         print(result)
