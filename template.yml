@@ -27,6 +27,6 @@ Resources:
   HelloWorld:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-HelloWorld'
+      FunctionName: delete_topics_information
       Handler: index.handler
       Runtime: python3.7
