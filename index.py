@@ -12,7 +12,7 @@ table = dynamodb.Table(table_name)
 
 def handler(event, context):
 
-    logger.info('DELETE topics')
+    logger.info('DELETE /api/v1/topics/{topicID}')
 
     response = table.delete_item(
         Key={
@@ -23,8 +23,8 @@ def handler(event, context):
     return {
             'statusCode': 200,
             'headers': {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*'
+              'Access-Control-Allow-Origin': '*',
+              'Content-Type': 'application/json'
             },
             'body': json.dumps(event['pathParameters']['topicID'])
     }
